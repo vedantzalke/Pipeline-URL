@@ -4,11 +4,13 @@ pipeline {
         stage('Static Analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
+                echo 'Run the DYNAMIC analysis to the code' 
             }
         }
         stage('Compile') {
             steps {
                 echo 'Compile the source code' 
+                echo 'Run the static analysis to the code' 
             }
         }
         stage('Security Check') {
@@ -24,6 +26,7 @@ pipeline {
         stage('Run Integration Tests') {
             steps {
                 echo 'Run only crucial integration tests from the source code' 
+                echo 'Run the static analysis to the code' 
             }
         }
         stage('Publish Artifacts') {
